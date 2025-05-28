@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-commerce MVP</title>
+  <link rel="stylesheet" href="style19.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Menú lateral -->
+    <aside class="sidebar">
+      <h2>Menú</h2>
+      <ul>
+        <li onclick="navigate('products')">📦 Productos</li>
+        <li onclick="navigate('cart')">🛒 Carrito</li>
+        <li onclick="navigate('payment')">💳 Pagos</li>
+        <li onclick="navigate('account')">👤 Cuenta</li>
+      </ul>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="content">
+      <!-- Login -->
+      <section id="login" class="section active">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="username" placeholder="Usuario" />
+        <input type="password" id="password" placeholder="Contraseña" />
+        <button onclick="login()">Ingresar</button>
+        <p>¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate aquí</a></p>
+      </section>
+
+      <!-- Registro -->
+      <section id="register" class="section hidden">
+        <h2>Registro</h2>
+        <input type="text" id="new-username" placeholder="Nuevo usuario" />
+        <input type="password" id="new-password" placeholder="Nueva contraseña" />
+        <button onclick="register()">Registrar</button>
+      </section>
+
+      <!-- Productos -->
+      <section id="products" class="section hidden">
+        <h2>Catálogo de Productos</h2>
+        <div id="product-list"></div>
+      </section>
+
+      <!-- Carrito -->
+      <section id="cart" class="section hidden">
+        <h2>Mi Carrito</h2>
+        <div id="cart-list"></div>
+        <p>Total: $<span id="total">0</span></p>
+      </section>
+
+      <!-- Pagos -->
+      <section id="payment" class="section hidden">
+        <h2>Pago Simulado</h2>
+        <p>Valor a pagar: $<span id="payment-amount">0</span></p>
+        <button onclick="simulatePayment()">Pagar</button>
+      </section>
+
+      <!-- Cuenta -->
+      <section id="account" class="section hidden">
+        <h2>Mi Cuenta</h2>
+        <p id="account-info"></p>
+        <button onclick="logout()">Cerrar sesión</button>
+      </section>
+    </main>
+  </div>
+
+  <script src="script19.js"></script>
+</body>
+</html>
